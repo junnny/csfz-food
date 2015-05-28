@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="page-header">
+        <h3>商家列表</h3>
+    </div>
+    <ul class="list-group">
+        {{#each stores}}
+            <li class="list-group-item">
+                <h3 class="list-group-item-heading"><a href="{{url 'store.detail' storeId=id}}">{{name}}</a></h3>
+
+                <p>
+                    <span class="glyphicon glyphicon-shopping-cart"></span>{{mainProduct}}
+                    <span class="glyphicon glyphicon-phone"></span>{{telephone}}
+                </p>
+            </li>
+        {{/each}}
+    </ul>
+</div>

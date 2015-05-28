@@ -1,0 +1,35 @@
+<div class="container">
+    <form class="form-horizontal form-container" id="foodNewForm" method="post" action="{{url 'vo.manage.food.new' storeId=store.id}}">
+        <fieldset>
+            <div class="page-header">
+                <h3><a href="{{url 'vo.manage.food.list' storeId=store._id}}">{{store.name}}</a>/新增套餐</h3>
+            </div>
+            {{#if errors}}
+                <div class="alert alert-danger">
+                    {{#each errors}}
+                        <p>{{this}}</p>
+                    {{/each}}
+                </div>
+            {{/if}}
+            <div class="form-group">
+                <label class="col-lg-2 control-label">套餐名称</label>
+
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" name="name" value="{{food.name}}" maxlength="50"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">套餐价格</label>
+
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" name="price" value="{{food.price}}" maxlength="50"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                    <button type="submit" class="btn btn-primary btn-block">新 增</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>

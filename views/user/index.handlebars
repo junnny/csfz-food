@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="page-header">
+        <h3>用户列表</h3>
+    </div>
+    <table class="table table-hover">
+        <col width="10%"/>
+        <col width="10%"/>
+        <col width="25%"/>
+        <col width="10%"/>
+        <col width="10%"/>
+        <col width="10%"/>
+        <col width="20%"/>
+        <thead>
+        <tr>
+            <th>姓名</th>
+            <th>手机</th>
+            <th>邮箱</th>
+            <th>添加时间</th>
+            <th>更新时间</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody id="tbody">
+        {{#each users}}
+            <tr>
+                <td>{{realname}}</td>
+                <td>{{mobile}}</td>
+                <td>{{email}}</td>
+                <td>{{moment createTime 'YYYY-MM-DD'}}</td>
+                <td>{{moment updateTime 'YYYY-MM-DD'}}</td>
+                <td>
+                    <div class="btn-group btn-group-xs">
+                        {{#if manage}}
+                            <button type="button" class="btn btn-info js-cancel" data-userid="{{_id}}">取消管理员权限</button>
+                        {{else}}
+                            <button type="button" class="btn btn-primary js-add" data-userid="{{_id}}">添加管理员权限</button>
+                        {{/if}}
+                    </div>
+                </td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 left-nav">
+            <ul class="nav nav-pills nav-stacked">
+                <li><a href="{{url 'vo.index'}}">当前订单</a></li>
+                <li class="active"><a href="{{url 'vo.order.history'}}">历史订单</a></li>
+                <li><a href="{{url 'vo.message'}}">基本信息</a></li>
+            </ul>
+        </div>
+        <div class="col-lg-9">
+            <div class="page-header">
+                <h3>历史订单</h3>
+            </div>
+            {{#if this.orders}}
+                <table class="table table-hover">
+                    <col width="30%"/>
+                    <col width="10%"/>
+                    <col width="10%"/>
+                    <col width="30%"/>
+                    <col width="20%"/>
+                    <thead>
+                    <tr>
+                        <th>套餐</th>
+                        <th>价格</th>
+                        <th>份数</th>
+                        <th>店铺</th>
+                        <th>时间</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#each this.orders}}
+                        <tr>
+                            <td>{{food.name}}</td>
+                            <td>{{food.price}}</td>
+                            <td>{{count}}</td>
+                            <td>{{store.name}}</td>
+                            <td>{{moment addTime 'YYYY-MM-DD HH:mm'}}</td>
+                        </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            {{else}}
+                <h4>暂无订单，马上<a href="{{url 'store'}}">点餐</a></h4>
+            {{/if}}
+        </div>
+    </div>
+</div>

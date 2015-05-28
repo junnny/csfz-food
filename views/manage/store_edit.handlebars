@@ -1,0 +1,52 @@
+<div class="container">
+    <form class="form-horizontal form-container" id="storeEditForm" method="post"
+          action="{{url 'vo.manage.store.update'}}">
+        <input type="hidden" name="id" value="{{store._id}}"/>
+        <fieldset>
+            <div class="page-header">
+                <h3><a href="{{url 'vo.manage.store'}}">管理</a>/修改店铺</h3>
+            </div>
+            {{#if errors}}
+                <div class="alert alert-danger">
+                    {{#each errors}}
+                        <p>{{this}}</p>
+                    {{/each}}
+                </div>
+            {{/if}}
+            <div class="form-group">
+                <label class="col-lg-2 control-label">店铺名称</label>
+
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" name="name" value="{{store.name}}" maxlength="20"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">主营产品</label>
+
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" name="mainProduct" value="{{store.mainProduct}}"
+                           maxlength="20">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">联系电话</label>
+
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" name="telephone" value="{{store.telephone}}" maxlength="11">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">店铺地址</label>
+
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" name="address" value="{{store.address}}" maxlength="20">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                    <button type="submit" class="btn btn-primary btn-block">保 存</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>

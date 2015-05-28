@@ -1,0 +1,10 @@
+{
+  "port": 8081,
+  "devMode": true,
+  "backendUrl": "http://backend.m.csfz.com",
+  "socketTimeout": 10000,
+  "cdn": "http://static.m.csfz.com",
+  "app": {
+    "site": "常熟服装在线移动站"
+  }
+}

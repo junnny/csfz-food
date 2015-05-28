@@ -1,0 +1,322 @@
+import React      from '../vendor/react';
+import $          from '../vendor/jquery';
+import ui         from '../component/ui';
+import moment     from '../vendor/moment';
+import Reflux     from '../vendor/reflux';
+import constants  from '../component/constants';
+import _          from '../vendor/underscore'
+//import React      from'../vendor/react/react-with-addons';
+
+//var cx = React.addons.classSet;
+
+var ListActions = Reflux.createActions([
+    'getAll',
+    'addItem',
+    'removeItem',
+    'createItem',
+    'updateItem',
+    'deleteItem'
+]);
+var id = 2;
+var ListStore = Reflux.createStore({
+    items: [],
+    listenables: ListActions,
+    onAddItem(){
+        var s = {
+            name: ++id,
+            mainProduct: '',
+            telephone: '',
+            address: ''
+        };
+        this.items.unshift(s);
+        this.trigger(this.items);
+    },
+    onRemoveItem(index){
+        this.items.splice(index, 1);
+        this.trigger(this.items);
+    },
+    onGetAll(){
+        $.get('/vo/manage/list', function (response) {
+            if (response.code === constants.resCode.COMMON) {
+                this.items = response.data;
+                this.trigger(this.items);
+            } else {
+                ui.tip({content: response.errors});
+            }
+        }.bind(this));
+    },
+    onCreateItem(item, index){
+        $.post('/vo/manage/store/new', item, function (response) {
+            if (response.code === constants.resCode.COMMON) {
+                ui.tip({content: '添加成功'});
+                this.items.splice(index, 1);
+                this.items.unshift(response.data);
+                this.trigger(this.items);
+            } else {
+                ui.tip({content: response.errors});
+            }
+
+        }.bind(this));
+    },
+    onUpdateItem(item, id, index, callback){
+        $.post('/vo/manage/store/update', _.extend(item, {id: id}), function (response) {
+            if (response.code === constants.resCode.COMMON) {
+                ui.tip({content: '更新成功'});
+                this.items[index] = response.data;
+                this.trigger(this.items, callback);
+            } else {
+                ui.tip({content: response.errors});
+            }
+
+        }.bind(this));
+    },
+    onDeleteItem(id, index){
+        $.post('/vo/manage/store/delete', {id: id}, function (response) {
+            if (response.code === constants.resCode.COMMON) {
+                ui.tip({content: '删除成功'});
+                this.items.splice(index, 1);
+                this.trigger(this.items);
+            } else {
+                ui.tip({content: response.errors});
+            }
+        }.bind(this));
+    }
+});
+
+
+class AddForm extends React.Component {
+    constructor(props) {
+        super(props)
+    }
+
+    handleClick() {
+        ListActions.addItem();
+    }
+
+    render() {
+        return (
+            <div className="page-header">
+                <h3>店铺列表
+                    <button className="btn btn-primary pull-right" id="addStore" onClick={this.handleClick.bind(this)}>
+                        新增店铺
+                    </button>
+                </h3>
+            </div>
+        )
+    }
+}
+
+
+class ListBox extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {list: []};
+        this.unsubscribe = ListStore.listen(this.onStatusChange.bind(this));
+    }
+
+    onStatusChange(data) {
+        this.setState({
+            list: data
+        });
+    }
+
+    componentDidMount() {
+        ListActions.getAll();
+    }
+
+    componentWillUnmount() {
+        this.unsubscribe();
+    }
+
+    render() {
+        return (
+            <div>
+                <AddForm/>
+                <table className="table table-hover">
+                    <col width="20%"/>
+                    <col width="15%"/>
+                    <col width="10%"/>
+                    <col width="20%"/>
+                    <col width="10%"/>
+                    <col width="10%"/>
+                    <col width="35%"/>
+                    <thead>
+                    <tr>
+                        <th>店铺名称</th>
+                        <th>主营产品</th>
+                        <th>联系电话</th>
+                        <th>店铺地址</th>
+                        <th>添加时间</th>
+                        <th>添加人</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <List data={this.state.list}/>
+                </table>
+            </div>
+        )
+    }
+}
+
+
+class List extends React.Component {
+    constructor(props) {
+        super(props)
+    }
+
+    render() {
+        return (
+            <tbody>
+            {this.props.data.map(function (store, index) {
+                return <Item data={store} index={index} key={index}/>
+            })}
+            </tbody>
+        )
+
+    }
+}
+
+
+class EditInput extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: props.defaultValue || ''
+        };
+    }
+
+    handleChange(e) {
+        var value = e.currentTarget.value;
+        this.setState({value: value});
+        this.props.attach(this.props.name, value);
+    }
+
+
+    render() {
+        return (
+            <input type="text" className="form-control input-sm" name={this.props.name}
+                   onChange={this.handleChange.bind(this)}
+                   value={this.state.value}/>
+        )
+    }
+}
+
+class Item extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isEdit: false,
+            model: {
+                name: props.data.name || '',
+                mainProduct: props.data.mainProduct || '',
+                telephone: props.data.telephone || '',
+                address: props.data.address || ''
+            }
+        };
+    }
+
+    componentWillMount() {
+
+    }
+
+    attach(name, value) {
+        this.state.model[name] = value;
+    }
+
+    handleCreate(index) {
+        ListActions.createItem(this.state.model, index);
+    }
+
+    handleUpdate(id, index) {
+        ListActions.updateItem(this.state.model, id, index, function () {
+            this.setState({isEdit: false});
+        }.bind(this));
+    }
+
+    handleDelete(id, index) {
+        ListActions.deleteItem(id, index);
+    }
+
+    handleRemove(index) {
+        ListActions.removeItem(index);
+    }
+
+    handleToggleEdit() {
+        this.setState({isEdit: !this.state.isEdit});
+    }
+
+    render() {
+        var item = this.props.data;
+        var index = this.props.index;
+        var operation;
+
+        if (!item._id) {
+            operation = (
+                <div className="btn-group btn-group-xs">
+                    <button type="button" className="btn btn-primary"
+                            onClick={this.handleCreate.bind(this,index)}>添加
+                    </button>
+                    <button type="button" className="btn btn-default"
+                            onClick={this.handleRemove.bind(this,index)}>删除
+                    </button>
+                </div>
+            )
+        } else {
+            if (this.state.isEdit) {
+                operation = (
+                    <div className="btn-group btn-group-xs">
+                        <button type="button" className="btn btn-primary"
+                                onClick={this.handleUpdate.bind(this,item._id,index)}>保存
+                        </button>
+                        <button type="button" className="btn btn-default" onClick={this.handleToggleEdit.bind(this)}>
+                            取消
+                        </button>
+                    </div>
+                )
+            } else {
+                operation = (
+                    <div className="btn-group btn-group-xs">
+                        <button type="button" className="btn btn-primary"
+                                onClick={this.handleToggleEdit.bind(this)}>修改
+                        </button>
+                        <button type="button" className="btn btn-danger"
+                                onClick={this.handleDelete.bind(this,item._id,index)}>删除
+                        </button>
+                        <a href="" type="button" className="btn btn-info">管理套餐</a>
+                    </div>
+                )
+            }
+        }
+        return (
+            <tr>
+                <td>
+                    {!item._id || this.state.isEdit ?
+                        <EditInput name="name" defaultValue={item.name} attach={this.attach.bind(this)}/>
+                        : item.name}
+                </td>
+                <td>
+                    {!item._id || this.state.isEdit ?
+                        <EditInput name="mainProduct" attach={this.attach.bind(this)}
+                                   defaultValue={item.mainProduct}/>
+                        : item.mainProduct}
+                </td>
+                <td>
+                    {!item._id || this.state.isEdit ?
+                        <EditInput name="telephone" attach={this.attach.bind(this)}
+                                   defaultValue={item.telephone}/>
+                        : item.telephone}
+                </td>
+                <td>
+                    {!item._id || this.state.isEdit ?
+                        <EditInput name="address" attach={this.attach.bind(this)} defaultValue={item.address}/>
+                        : item.address}
+                </td>
+                <td>{!item._id ? '' : moment(item.addTime).format('YYYY-MM-DD')}</td>
+                <td>{!item._id ? '' : item.creater.realname}</td>
+                <td>{operation}</td>
+            </tr>
+        )
+    }
+}
+
+React.render(<ListBox />, $('#container')[0]);

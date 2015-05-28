@@ -1,0 +1,122 @@
+<div class="container">
+    {{#if session.user}}
+        {{#if stores}}
+            <button class="pull-right btn btn-danger" id="endOrder">结束本次订餐</button>
+        {{/if}}
+    {{/if}}
+    {{#each stores}}
+        <div class="">
+            <div class="page-header">
+                <h3><a href="{{url 'store.detail' storeId=this.store.id}}">{{this.store.name}}（{{this.store.telephone}}
+                    ）</a></h3>
+
+                <div>
+                    <span class="label label-info">总价格:{{this.summary.total}}</span>
+                    <span class="label label-primary">总份数:{{this.summary.count}}</span>
+                </div>
+            </div>
+            <table class="table table-hover">
+                <col width="20%"/>
+                <col width="10%"/>
+                <col width="10%"/>
+                <col width="40%"/>
+                <col width="10%"/>
+                <thead>
+                <tr>
+                    <th>套餐</th>
+                    <th>份数</th>
+                    <th>总价</th>
+                    <th>订餐</th>
+                    <th>单价</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#each this.orders}}
+                    <tr>
+                        <td>{{this.order.food.name}}</td>
+                        <td>{{this.count}}</td>
+                        <td>{{this.total}}</td>
+                        <td>
+                            {{#each this.list}}
+                                <p>{{this.creater.realname}} {{this.count}}份</p>
+                            {{/each}}
+                        </td>
+                        <td>{{this.order.food.price}}</td>
+                    </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </div>
+    {{else}}
+        <div class="home-banner">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="/image/home/banner1.jpg"/>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="/image/home/banner2.jpg"/>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="/image/home/banner3.jpg"/>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    {{/each}}
+    {{#if historys}}
+        <h2>历史订单</h2>
+
+        {{#each historys}}
+            <div class="well" data-id="{{id}}">
+                <div class="page-header">
+                    <h3>{{moment addTime 'YYYY-MM-DD HH:mm'}}</h3>
+                </div>
+                {{#each stores}}
+                    <div class="page-header">
+                        <h3><a href="{{url 'store.detail' storeId=this.store.id}}">{{this.store.name}}
+                            （{{this.store.telephone}}）</a></h3>
+
+                        <div>
+                            <span class="label label-info">总价格:{{this.summary.total}}</span>
+                            <span class="label label-primary">总份数:{{this.summary.count}}</span>
+                        </div>
+                    </div>
+                    <table class="table table-hover">
+                        <col width="20%"/>
+                        <col width="10%"/>
+                        <col width="10%"/>
+                        <col width="40%"/>
+                        <col width="10%"/>
+                        <thead>
+                        <tr>
+                            <th>套餐</th>
+                            <th>份数</th>
+                            <th>总价</th>
+                            <th>订餐</th>
+                            <th>单价</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {{#each this.orders}}
+                            <tr>
+                                <td>{{this.order.food.name}}</td>
+                                <td>{{this.count}}</td>
+                                <td>{{this.total}}</td>
+                                <td>
+                                    {{#each this.list}}
+                                        <p>{{this.creater.realname}} {{this.count}}份</p>
+                                    {{/each}}
+                                </td>
+                                <td>{{this.order.food.price}}</td>
+                            </tr>
+                        {{/each}}
+                        </tbody>
+                    </table>
+                {{/each}}
+            </div>
+        {{/each}}
+    {{/if}}
+</div>
+

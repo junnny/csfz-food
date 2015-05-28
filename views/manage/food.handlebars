@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="page-header">
+        <h3>{{store.name}}
+            <a href="{{url 'vo.manage.food.new' storeId=store._id}}" class="btn btn-primary pull-right">
+                新增套餐
+            </a>
+        </h3>
+    </div>
+    <table class="table table-hover">
+        <col width="20%"/>
+        <col width="10%"/>
+        <col width="15%"/>
+        <col width="15%"/>
+        <col width="15%"/>
+        <col width="15%"/>
+        <col width="20%"/>
+        <thead>
+        <tr>
+            <th>名称</th>
+            <th>价格</th>
+            <th>添加时间</th>
+            <th>添加人</th>
+            <th>更新时间</th>
+            <th>更新人</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each foods}}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{price}}</td>
+                <td>{{moment addTime 'YYYY-MM-DD'}}</td>
+                <td>{{creater.realname}}</td>
+                <td>{{moment updateTime 'YYYY-MM-DD'}}</td>
+                <td>{{updater.realname}}</td>
+                <td>
+                    <div class="btn-group btn-group-xs">
+                        <a href="{{url 'vo.manage.food.edit' storeId=../store._id foodId=_id}}" type="button"
+                           class="btn btn-primary">修改</a>
+                        <button type="button" class="btn btn-danger js-delete" data-foodid="{{_id}}">删除</button>
+                    </div>
+                </td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,61 @@
+body {
+    margin-top: 60px;
+}
+
+.form-container {
+    margin: 0 auto;
+    width: 550px;
+}
+
+label.error {
+    color: red;
+}
+
+.list-group-item {
+    border: none;
+    padding-left: 0;
+}
+
+.store-dec {
+    padding: 10px 0;
+}
+
+.ui-tip {
+    width: 200px;
+    margin: 0 auto;
+    position: fixed;
+    left: 45%;
+    top: 50px;
+}
+
+.required {
+    color: red;
+    font-size: 14px;
+}
+
+.alpha {
+    display: none;
+    position: fixed;
+    background: black;
+    z-index: 1100;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    opacity: 0.6;
+}
+
+.dialog{
+    display: none;
+}
+
+.left-nav{
+    margin-top: 40px;
+}
+
+.home-banner .swiper-slide{
+    width: 990px;
+    height: 300px;
+}

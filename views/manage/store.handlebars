@@ -1,0 +1,55 @@
+<div class="container" style="font-size: 13px;">
+    <div class="page-header">
+        <h3>店铺列表
+            <a href="{{url 'vo.manage.store.new'}}" class="btn btn-primary pull-right">
+                新增店铺
+            </a>
+        </h3>
+    </div>
+    <table class="table table-hover">
+        <col width="15%"/>
+        <col width="10%"/>
+        <col width="10%"/>
+        <col width="20%"/>
+        <col width="8%"/>
+        <col width="8%"/>
+        <col width="8%"/>
+        <col width="8%"/>
+        <col width="20%"/>
+        <thead>
+        <tr>
+            <th>店铺名称</th>
+            <th>主营产品</th>
+            <th>联系电话</th>
+            <th>店铺地址</th>
+            <th>添加时间</th>
+            <th>添加人</th>
+            <th>更新时间</th>
+            <th>更新人</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each stores}}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{mainProduct}}</td>
+                <td>{{telephone}}</td>
+                <td>{{address}}</td>
+                <td>{{moment addTime 'YYYY-MM-DD'}}</td>
+                <td>{{creater.realname}}</td>
+                <td>{{moment updateTime 'YYYY-MM-DD'}}</td>
+                <td>{{updater.realname}}</td>
+                <td>
+                    <div class="btn-group btn-group-xs">
+                        <a href="{{url 'vo.manage.store.edit' storeId=_id}}" type="button"
+                           class="btn btn-primary">修改</a>
+                        <button type="button" class="btn btn-danger js-delete" data-storeid="{{_id}}">删除</button>
+                        <a href="{{url 'vo.manage.food.list' storeId=_id}}" type="button" class="btn btn-info">管理</a>
+                    </div>
+                </td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</div>

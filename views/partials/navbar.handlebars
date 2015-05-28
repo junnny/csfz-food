@@ -1,0 +1,31 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="{{url 'index'}}">常服在线订餐系统</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="{{url 'index'}}">首页</a></li>
+                <li><a href="{{url 'store'}}">点餐</a></li>
+                <li><a href="{{url 'vo.index'}}">我的</a></li>
+                {{#if session.user}}
+                    {{#if session.user.manage}}
+                        <li><a href="{{url 'vo.manage.store'}}">店铺管理</a></li>
+                        <li><a href="{{url 'vo.manage.user.list'}}">用户管理</a></li>
+                    {{/if}}
+                {{/if}}
+            </ul>
+            {{#if session.user}}
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="javascript:void(0)">{{session.user.realname}}</a></li>
+                    <li><a href="{{url 'logout'}}">退出</a></li>
+                </ul>
+            {{else}}
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{{url 'login'}}">登录</a></li>
+                    <li><a href="{{url 'register'}}">注册</a></li>
+                </ul>
+            {{/if}}
+        </div>
+    </div>
+</nav>
