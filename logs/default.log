@@ -5725,3 +5725,90 @@
 [2015-05-28 17:46:46.603] [DEBUG] default - 36 Routes Has Registered
 [2015-05-28 17:46:46.610] [INFO] default - Mongodb has connected
 [2015-05-28 17:53:21.886] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-05-28 18:58:27.293] [INFO] default - Listening on port 8081
+[2015-05-28 18:58:34.550] [DEBUG] default - GET:/food/:storeId/new
+[2015-05-28 18:58:34.551] [DEBUG] default - POST:/food/:storeId/new
+[2015-05-28 18:58:34.551] [DEBUG] default - GET:/
+[2015-05-28 18:58:34.551] [DEBUG] default - GET:/history/delete/:historyId
+[2015-05-28 18:58:34.551] [DEBUG] default - POST:/order/end
+[2015-05-28 18:58:34.551] [DEBUG] default - GET:/vo/manage/store/list
+[2015-05-28 18:58:34.551] [DEBUG] default - GET:/vo/manage/store/new
+[2015-05-28 18:58:34.551] [DEBUG] default - GET:/vo/manage/store/edit/:storeId
+[2015-05-28 18:58:34.552] [DEBUG] default - GET:/vo/manage/food/:storeId/list
+[2015-05-28 18:58:34.552] [DEBUG] default - GET:/vo/manage/food/:storeId/new
+[2015-05-28 18:58:34.552] [DEBUG] default - GET:/vo/manage/food/:storeId/edit/:foodId
+[2015-05-28 18:58:34.552] [DEBUG] default - POST:/vo/manage/store/new
+[2015-05-28 18:58:34.552] [DEBUG] default - POST:/vo/manage/store/update
+[2015-05-28 18:58:34.552] [DEBUG] default - POST:/vo/manage/store/delete
+[2015-05-28 18:58:34.552] [DEBUG] default - POST:/vo/manage/food/:storeId/new
+[2015-05-28 18:58:34.553] [DEBUG] default - POST:/vo/manage/food/:storeId/update
+[2015-05-28 18:58:34.553] [DEBUG] default - POST:/vo/manage/food/delete
+[2015-05-28 18:58:34.553] [DEBUG] default - GET:/order/:storeId
+[2015-05-28 18:58:34.553] [DEBUG] default - POST:/order/new
+[2015-05-28 18:58:34.553] [DEBUG] default - POST:/order/delete
+[2015-05-28 18:58:34.553] [DEBUG] default - GET:/store/
+[2015-05-28 18:58:34.553] [DEBUG] default - GET:/store/:storeId
+[2015-05-28 18:58:34.553] [DEBUG] default - GET:/vo/manage/user/list
+[2015-05-28 18:58:34.553] [DEBUG] default - POST:/vo/manage/set
+[2015-05-28 18:58:34.553] [DEBUG] default - POST:/vo/manage/cancel
+[2015-05-28 18:58:34.553] [DEBUG] default - GET:/vo/
+[2015-05-28 18:58:34.554] [DEBUG] default - GET:/vo/message
+[2015-05-28 18:58:34.554] [DEBUG] default - GET:/vo/order/history
+[2015-05-28 18:58:34.554] [DEBUG] default - GET:/vo/register
+[2015-05-28 18:58:34.554] [DEBUG] default - GET:/vo/login
+[2015-05-28 18:58:34.554] [DEBUG] default - GET:/vo/logout
+[2015-05-28 18:58:34.554] [DEBUG] default - POST:/vo/register
+[2015-05-28 18:58:34.554] [DEBUG] default - POST:/vo/login
+[2015-05-28 18:58:34.554] [DEBUG] default - POST:/vo/message
+[2015-05-28 18:58:34.554] [DEBUG] default - GET:/_debug/
+[2015-05-28 18:58:34.554] [DEBUG] default - GET:/_debug/:filename
+[2015-05-28 18:58:34.554] [DEBUG] default - 36 Routes Has Registered
+[2015-05-28 18:58:34.560] [INFO] default - Mongodb has connected
+[2015-05-28 19:12:49.006] [INFO] default - Listening on port 8081
+[2015-05-28 19:12:56.267] [INFO] default - Mongodb has connected
+[2015-05-29 10:57:23.624] [INFO] default - Listening on port 8081
+[2015-05-29 10:57:25.048] [ERROR] default - Mongodb Error: failed to connect to [localhost:27017]
+[2015-05-29 10:57:56.539] [INFO] default - Listening on port 8081
+[2015-05-29 10:57:57.795] [ERROR] default - Mongodb Error: failed to connect to [localhost:27017]
+[2015-05-29 10:58:15.190] [INFO] default - Listening on port 8081
+[2015-05-29 10:58:15.478] [INFO] default - Mongodb has connected
+[2015-05-29 10:58:28.527] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-05-29 11:09:21.321] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-05-29 11:10:41.479] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-05-29 11:10:42.697] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-05-29 11:10:42.753] [ERROR] default - Request failed: "//favicon.ico":Page Not Found
+[2015-05-29 11:11:08.663] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-05-29 11:11:08.673] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-05-29 11:11:09.117] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-05-29 11:13:39.865] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-05-29 11:13:47.475] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-05-29 11:13:50.947] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-05-29 11:13:56.928] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-05-29 11:14:58.388] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-05-29 11:15:05.758] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-05-29 11:15:09.147] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-05-29 11:16:32.030] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-05-29 11:16:40.140] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-05-29 11:16:54.397] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-05-29 11:16:57.588] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-05-29 11:19:15.553] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-05-29 11:19:21.268] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-05-29 11:19:25.713] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-05-29 11:19:37.111] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-05-29 11:19:37.994] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-05-29 11:19:44.896] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-05-29 11:19:53.270] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-05-29 11:19:54.857] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-05-29 11:19:57.261] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-05-29 11:20:01.331] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-05-29 11:22:38.511] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-05-29 11:22:40.318] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-05-29 11:26:27.425] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-05-29 11:29:38.145] [INFO] default - Listening on port 8081
+[2015-05-29 11:29:38.441] [INFO] default - Mongodb has connected
+[2015-05-29 11:30:30.698] [INFO] default - Listening on port 8081
+[2015-05-29 11:30:37.730] [ERROR] default - Request failed: "/":Page Not Found
+[2015-05-29 11:30:38.001] [INFO] default - Mongodb has connected
+[2015-05-29 11:31:28.183] [INFO] default - Listening on port 8081
+[2015-05-29 11:31:36.080] [INFO] default - Mongodb has connected
+[2015-05-29 11:34:04.455] [ERROR] default - Request failed: "/favicon.ico":Page Not Found

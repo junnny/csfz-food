@@ -12,10 +12,12 @@ var express = require('express'),
     rewriter = require('./lib/utils/rewriter'),
     log4js = require('./lib/utils/logger'),
     errors = require('./lib/utils/errors'),
-    router = require('./lib/utils/router'),
     conf = require('./config.json'),
+    router = require('express-mapping'),
     app = express(),
-    path = require('path');
+    authority = require('./lib/utils/authority'),
+    filter = require('./lib/utils/filter');
+path = require('path');
 
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
@@ -37,7 +39,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, (conf.devMode ? '/public' : '/dist'))));
 app.use(errors.domain);
 app.use(rewriter.inbound());
-app.use(router);
+app.use(filter.filter);
+app.use(authority.filter);
+app.use(router('lib/controller'));
 app.use(errors.notFound);
 
 module.exports = app;
