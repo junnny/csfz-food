@@ -52,7 +52,7 @@
 
 	var _vendorJquery2 = _interopRequireDefault(_vendorJquery);
 
-	__webpack_require__(2);
+	__webpack_require__(5);
 
 	(0, _vendorJquery2['default'])('#loginForm').validate({
 	    focusInvalid: false,
@@ -8998,7 +8998,10 @@
 	// Don't return options that are disabled or in a disabled optgroup
 
 /***/ },
-/* 2 */
+/* 2 */,
+/* 3 */,
+/* 4 */,
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -9009,7 +9012,7 @@
 
 	var _vendorJquery2 = _interopRequireDefault(_vendorJquery);
 
-	__webpack_require__(6);
+	__webpack_require__(8);
 
 	_vendorJquery2['default'].validator.addMethod('USERNAME', function (value, element, param) {
 	    return this.optional(element) || /^[0-9a-zA-Z]{6,15}$/.test(value);
@@ -9032,10 +9035,9 @@
 	});
 
 /***/ },
-/* 3 */,
-/* 4 */,
-/* 5 */,
-/* 6 */
+/* 6 */,
+/* 7 */,
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*!

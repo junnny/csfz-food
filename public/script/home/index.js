@@ -32,3 +32,8 @@ new Swiper('.swiper-container', {
     pagination: '.swiper-pagination'
 });
 
+$('.js-toggle').click(function(){
+    $(this).toggleClass('glyphicon-plus glyphicon-minus');
+    $(this).closest('div.well').find('.js-content').toggle();
+});
+

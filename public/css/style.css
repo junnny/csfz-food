@@ -59,3 +59,7 @@ label.error {
     width: 990px;
     height: 300px;
 }
+
+.glyphicon{
+    cursor: pointer;
+}

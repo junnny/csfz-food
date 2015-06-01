@@ -70,50 +70,55 @@
 
         {{#each historys}}
             <div class="well" data-id="{{id}}">
-                <div class="page-header">
-                    <h3>{{moment addTime 'YYYY-MM-DD HH:mm'}} {{creater.realname}}</h3>
-                </div>
+                <h3>
+                    {{moment addTime 'YYYY-MM-DD HH:mm'}} {{creater.realname}}
+                    {{#unless @first}}
+                        <span class="glyphicon glyphicon-plus pull-right js-toggle"></span>
+                    {{/unless}}
+                </h3>
                 {{#each stores}}
-                    <div class="page-header">
-                        <h3><a href="{{url 'store.detail' storeId=this.store.id}}">{{this.store.name}}
-                            （{{this.store.telephone}}）</a></h3>
+                    <div class="js-content" {{#unless @../first}}style="display:none;" {{/unless}}>
+                        <div class="page-header">
+                            <h3><a href="{{url 'store.detail' storeId=this.store.id}}">{{this.store.name}}
+                                （{{this.store.telephone}}）</a></h3>
 
-                        <div>
-                            <span class="label label-info">总价格:{{this.summary.total}}</span>
-                            <span class="label label-primary">总份数:{{this.summary.count}}</span>
+                            <div>
+                                <span class="label label-info">总价格:{{this.summary.total}}</span>
+                                <span class="label label-primary">总份数:{{this.summary.count}}</span>
+                            </div>
                         </div>
-                    </div>
-                    <table class="table table-hover">
-                        <col width="20%"/>
-                        <col width="10%"/>
-                        <col width="10%"/>
-                        <col width="40%"/>
-                        <col width="10%"/>
-                        <thead>
-                        <tr>
-                            <th>套餐</th>
-                            <th>份数</th>
-                            <th>总价</th>
-                            <th>订餐</th>
-                            <th>单价</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {{#each this.orders}}
+                        <table class="table table-hover table-condensed">
+                            <col width="20%"/>
+                            <col width="10%"/>
+                            <col width="10%"/>
+                            <col width="40%"/>
+                            <col width="10%"/>
+                            <thead>
                             <tr>
-                                <td>{{this.order.food.name}}</td>
-                                <td>{{this.count}}</td>
-                                <td>{{this.total}}</td>
-                                <td>
-                                    {{#each this.list}}
-                                        <p>{{this.creater.realname}} {{this.count}}份</p>
-                                    {{/each}}
-                                </td>
-                                <td>{{this.order.food.price}}</td>
+                                <th>套餐</th>
+                                <th>份数</th>
+                                <th>总价</th>
+                                <th>订餐</th>
+                                <th>单价</th>
                             </tr>
-                        {{/each}}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                            {{#each this.orders}}
+                                <tr>
+                                    <td>{{this.order.food.name}}</td>
+                                    <td>{{this.count}}</td>
+                                    <td>{{this.total}}</td>
+                                    <td>
+                                        {{#each this.list}}
+                                            <p>{{this.creater.realname}} {{this.count}}份</p>
+                                        {{/each}}
+                                    </td>
+                                    <td>{{this.order.food.price}}</td>
+                                </tr>
+                            {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
                 {{/each}}
             </div>
         {{/each}}

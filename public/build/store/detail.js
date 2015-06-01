@@ -52,7 +52,7 @@
 
 	var _vendorJquery2 = _interopRequireDefault(_vendorJquery);
 
-	var _componentUi = __webpack_require__(3);
+	var _componentUi = __webpack_require__(2);
 
 	var _componentUi2 = _interopRequireDefault(_componentUi);
 
@@ -8980,8 +8980,7 @@
 	// Don't return options that are disabled or in a disabled optgroup
 
 /***/ },
-/* 2 */,
-/* 3 */
+/* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -8992,11 +8991,11 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _uiTip = __webpack_require__(7);
+	var _uiTip = __webpack_require__(6);
 
 	var _uiTip2 = _interopRequireDefault(_uiTip);
 
-	var _uiDialog = __webpack_require__(8);
+	var _uiDialog = __webpack_require__(7);
 
 	var _uiDialog2 = _interopRequireDefault(_uiDialog);
 
@@ -9007,10 +9006,10 @@
 	module.exports = exports['default'];
 
 /***/ },
+/* 3 */,
 /* 4 */,
 /* 5 */,
-/* 6 */,
-/* 7 */
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -9058,7 +9057,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 8 */
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -9117,6 +9116,7 @@
 	module.exports = exports['default'];
 
 /***/ },
+/* 8 */,
 /* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
