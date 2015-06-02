@@ -48,7 +48,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _vendorJquery = __webpack_require__(1);
+	var _vendorJquery = __webpack_require__(2);
 
 	var _vendorJquery2 = _interopRequireDefault(_vendorJquery);
 
@@ -100,7 +100,8 @@
 	});
 
 /***/ },
-/* 1 */
+/* 1 */,
+/* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -9012,7 +9013,6 @@
 	// Don't return options that are disabled or in a disabled optgroup
 
 /***/ },
-/* 2 */,
 /* 3 */,
 /* 4 */,
 /* 5 */
@@ -9022,11 +9022,11 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _vendorJquery = __webpack_require__(1);
+	var _vendorJquery = __webpack_require__(2);
 
 	var _vendorJquery2 = _interopRequireDefault(_vendorJquery);
 
-	__webpack_require__(8);
+	__webpack_require__(10);
 
 	_vendorJquery2['default'].validator.addMethod('USERNAME', function (value, element, param) {
 	    return this.optional(element) || /^[0-9a-zA-Z]{6,15}$/.test(value);
@@ -9051,7 +9051,9 @@
 /***/ },
 /* 6 */,
 /* 7 */,
-/* 8 */
+/* 8 */,
+/* 9 */,
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*!
@@ -9066,7 +9068,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-	var _jquery = __webpack_require__(1);
+	var _jquery = __webpack_require__(2);
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 

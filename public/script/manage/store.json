@@ -23,7 +23,8 @@ var ListStore = Reflux.createStore({
     listenables: ListActions,
     onAddItem(){
         var s = {
-            name: ++id,
+            innerId:id++,
+            name: '',
             mainProduct: '',
             telephone: '',
             address: ''
@@ -36,7 +37,7 @@ var ListStore = Reflux.createStore({
         this.trigger(this.items);
     },
     onGetAll(){
-        $.get('/vo/manage/list', function (response) {
+        $.get('/vo/react/list', function (response) {
             if (response.code === constants.resCode.COMMON) {
                 this.items = response.data;
                 this.trigger(this.items);
@@ -290,25 +291,26 @@ class Item extends React.Component {
         return (
             <tr>
                 <td>
+                   <p>{item.innerId}</p>
                     {!item._id || this.state.isEdit ?
-                        <EditInput name="name" defaultValue={item.name} attach={this.attach.bind(this)}/>
+                        <EditInput name="name" defaultValue={item.name} key={item.innerId} attach={this.attach.bind(this)}/>
                         : item.name}
                 </td>
                 <td>
                     {!item._id || this.state.isEdit ?
-                        <EditInput name="mainProduct" attach={this.attach.bind(this)}
+                        <EditInput name="mainProduct" key={item.innerId} attach={this.attach.bind(this)}
                                    defaultValue={item.mainProduct}/>
                         : item.mainProduct}
                 </td>
                 <td>
                     {!item._id || this.state.isEdit ?
-                        <EditInput name="telephone" attach={this.attach.bind(this)}
+                        <EditInput name="telephone" key={item.innerId} attach={this.attach.bind(this)}
                                    defaultValue={item.telephone}/>
                         : item.telephone}
                 </td>
                 <td>
                     {!item._id || this.state.isEdit ?
-                        <EditInput name="address" attach={this.attach.bind(this)} defaultValue={item.address}/>
+                        <EditInput name="address" key={item.innerId} attach={this.attach.bind(this)} defaultValue={item.address}/>
                         : item.address}
                 </td>
                 <td>{!item._id ? '' : moment(item.addTime).format('YYYY-MM-DD')}</td>

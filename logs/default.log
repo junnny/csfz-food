@@ -5869,3 +5869,64 @@
 [2015-06-01 18:47:15.286] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
 [2015-06-01 19:27:09.954] [INFO] default - Listening on port 8081
 [2015-06-01 19:27:20.001] [INFO] default - Mongodb has connected
+[2015-06-02 10:39:23.517] [INFO] default - Listening on port 8081
+[2015-06-02 10:39:24.198] [INFO] default - Mongodb has connected
+[2015-06-02 10:39:27.788] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-06-02 10:42:51.235] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-06-02 10:43:12.984] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-06-02 10:43:15.346] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-06-02 10:43:23.308] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-06-02 10:43:23.319] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-06-02 10:43:23.753] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-06-02 10:43:27.594] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-06-02 10:43:37.363] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-06-02 10:43:46.159] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-06-02 10:43:51.906] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-06-02 10:43:56.020] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-06-02 10:43:58.555] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-06-02 10:44:05.445] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-06-02 10:44:06.869] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-06-02 10:44:09.403] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-06-02 10:44:11.353] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-06-02 10:44:16.323] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-06-02 10:44:29.332] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-06-02 10:44:30.986] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-06-02 10:44:35.579] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-06-02 10:44:40.645] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-06-02 10:44:44.925] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-06-02 10:44:46.144] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-06-02 10:44:49.336] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-06-02 10:44:50.775] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-06-02 10:44:54.344] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-06-02 10:44:58.264] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-06-02 10:45:00.610] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-06-02 10:45:22.606] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-06-02 10:48:05.428] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-06-02 10:48:17.023] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-06-02 10:48:17.146] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-06-02 10:48:21.740] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-06-02 10:50:10.476] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-06-02 10:56:51.846] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-06-02 11:10:48.218] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-06-02 11:10:54.514] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-06-02 11:14:30.957] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-06-02 11:14:31.153] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-06-02 11:20:43.572] [ERROR] default - Request failed: "/favicon.ico":Page Not Found
+[2015-06-02 13:35:03.336] [INFO] default - Listening on port 8081
+[2015-06-02 13:35:13.337] [ERROR] default - Request failed: "/":Page Not Found
+[2015-06-02 13:35:13.338] [ERROR] default - Request failed: "/":Page Not Found
+[2015-06-02 13:35:13.805] [INFO] default - Mongodb has connected
+[2015-06-02 13:39:25.825] [ERROR] default - Request failed: "/vo/manage/list":Page Not Found
+[2015-06-02 13:39:27.348] [ERROR] default - Request failed: "/vo/manage/list":Page Not Found
+[2015-06-02 13:40:34.155] [INFO] default - Listening on port 8081
+[2015-06-02 13:40:42.722] [ERROR] default - Request failed: "/vo/login/?from=%2Fvo%2Fmanage%2Fstore%2Flist":Page Not Found
+[2015-06-02 13:40:42.758] [INFO] default - Mongodb has connected
+[2015-06-02 13:49:14.829] [INFO] default - Listening on port 8081
+[2015-06-02 13:49:24.595] [INFO] default - Mongodb has connected
+[2015-06-02 13:49:57.011] [ERROR] default - Request failed: "/vo/manage/list":Page Not Found
+[2015-06-02 13:50:07.787] [ERROR] default - Request failed: "/vo/manage/list":Page Not Found
+[2015-06-02 13:50:24.874] [ERROR] default - Request failed: "/vo/react/list":Page Not Found
+[2015-06-02 13:50:51.282] [ERROR] default - Request failed: "/vo/react/list":Page Not Found
+[2015-06-02 13:51:10.536] [INFO] default - Listening on port 8081
+[2015-06-02 13:51:18.034] [INFO] default - Mongodb has connected
+[2015-06-02 14:03:43.141] [ERROR] default - Request failed: "/favicon.ico":Page Not Found

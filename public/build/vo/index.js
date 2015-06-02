@@ -48,11 +48,11 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _vendorJquery = __webpack_require__(1);
+	var _vendorJquery = __webpack_require__(2);
 
 	var _vendorJquery2 = _interopRequireDefault(_vendorJquery);
 
-	var _componentUi = __webpack_require__(2);
+	var _componentUi = __webpack_require__(1);
 
 	var _componentUi2 = _interopRequireDefault(_componentUi);
 
@@ -77,6 +77,32 @@
 
 /***/ },
 /* 1 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	    value: true
+	});
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	var _uiTip = __webpack_require__(11);
+
+	var _uiTip2 = _interopRequireDefault(_uiTip);
+
+	var _uiDialog = __webpack_require__(12);
+
+	var _uiDialog2 = _interopRequireDefault(_uiDialog);
+
+	exports['default'] = {
+	    tip: _uiTip2['default'],
+	    dialog: _uiDialog2['default']
+	};
+	module.exports = exports['default'];
+
+/***/ },
+/* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -8988,36 +9014,15 @@
 	// Don't return options that are disabled or in a disabled optgroup
 
 /***/ },
-/* 2 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, '__esModule', {
-	    value: true
-	});
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-	var _uiTip = __webpack_require__(6);
-
-	var _uiTip2 = _interopRequireDefault(_uiTip);
-
-	var _uiDialog = __webpack_require__(7);
-
-	var _uiDialog2 = _interopRequireDefault(_uiDialog);
-
-	exports['default'] = {
-	    tip: _uiTip2['default'],
-	    dialog: _uiDialog2['default']
-	};
-	module.exports = exports['default'];
-
-/***/ },
 /* 3 */,
 /* 4 */,
 /* 5 */,
-/* 6 */
+/* 6 */,
+/* 7 */,
+/* 8 */,
+/* 9 */,
+/* 10 */,
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -9028,7 +9033,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _vendorJquery = __webpack_require__(1);
+	var _vendorJquery = __webpack_require__(2);
 
 	var _vendorJquery2 = _interopRequireDefault(_vendorJquery);
 
@@ -9065,7 +9070,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 7 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -9076,11 +9081,11 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _vendorJquery = __webpack_require__(1);
+	var _vendorJquery = __webpack_require__(2);
 
 	var _vendorJquery2 = _interopRequireDefault(_vendorJquery);
 
-	var _util = __webpack_require__(9);
+	var _util = __webpack_require__(15);
 
 	var _util2 = _interopRequireDefault(_util);
 
@@ -9124,8 +9129,9 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 8 */,
-/* 9 */
+/* 13 */,
+/* 14 */,
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -9136,7 +9142,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _vendorJquery = __webpack_require__(1);
+	var _vendorJquery = __webpack_require__(2);
 
 	var _vendorJquery2 = _interopRequireDefault(_vendorJquery);
 
